@@ -3,9 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      sm: "340px",
-      md: "540px",
-      lg: "768px",
+      sm: "390px",
+      md: "580px",
+      lg: "800px",
       xl: "1180px",
       '2xl':"1490px"
     },
@@ -13,8 +13,7 @@ export default {
       center: true,
       padding: {
         DEFAULT: "1rem",
-        sm: "2rem",
-        lg: "4rem",
+        lg: "2rem",
       },
     },
     extend: {},
