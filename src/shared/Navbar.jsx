@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
-
+import icon from "../assets/icon.png"
 
 const Navbar = () => {
 
@@ -18,12 +18,11 @@ const Navbar = () => {
     }
     
     const links = <>
- <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          
-        </li>
-        <li><a>Item 3</a></li>
+ <li><Link to='/'>Home</Link></li>
+ <li><Link to='/'>Home</Link></li>
+ <li><Link to='/'>Home</Link></li>
+ <li><Link to='/'>Home</Link></li>
+        
 
     </>
 
@@ -52,7 +51,10 @@ const Navbar = () => {
        {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl">
+        <img className="w-12" src={icon} alt="" />
+        <h3>Job Portal</h3>
+    </a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
