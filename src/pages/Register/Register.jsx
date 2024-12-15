@@ -4,11 +4,16 @@ import animation from '../../assets/Lottie/lottie.json'
 
 import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthContext";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 
 const Register = () => {
 
     const {setUser,createUser} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location?.state || "/";
+    console.log(location);
 
     const [err,setError] = useState("")
     const handleRegister = e =>{
@@ -29,6 +34,7 @@ const Register = () => {
         createUser(email,password)
         .then(result=>{
            console.log(result.user);
+           navigate(from);
         })
         .catch(err=>{
             console.log(err);
@@ -64,6 +70,9 @@ const Register = () => {
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Register</button>
+        </div>
+        <div className="form-control mt-4">
+            <p>Already have an account? <Link className="text-blue-600 font-bold text-lg" to="/login">Login</Link></p>
         </div>
       </form>
     </div>

@@ -2,11 +2,16 @@ import Lottie from "lottie-react";
 import animation from '../../assets/Lottie/loginAnimation.json'
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
 
     const {signInUser} = useContext(AuthContext);
 
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location?.state || "/";
+    console.log(location);
     const handleSignIn = e =>{
         e.preventDefault();
         const form = e.target;
@@ -16,6 +21,7 @@ const SignIn = () => {
         signInUser(email,password)
         .then(result=>{
             console.log(result.user);
+            navigate(from);
         })
         .catch(err=>{
             console.log(err);
@@ -50,6 +56,10 @@ const SignIn = () => {
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
+        </div>
+        <div className="form-control mt-4">
+        <p>Don't have an Account? <Link to='/register'
+        >Register</Link></p>
         </div>
       </form>
     </div>

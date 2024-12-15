@@ -19,7 +19,7 @@ const Navbar = () => {
     
     const links = <>
  <li><Link to='/'>Home</Link></li>
- <li><Link to='/'>Home</Link></li>
+ <li><Link to='/addJob'>Add a Job</Link></li>
  <li><Link to='/'>Home</Link></li>
  <li><Link to='/'>Home</Link></li>
         
