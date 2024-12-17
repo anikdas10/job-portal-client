@@ -17,14 +17,22 @@ const Navbar = () => {
         })
     }
     
-    const links = <>
- <li><Link to='/'>Home</Link></li>
- <li><Link to='/addJob'>Add a Job</Link></li>
- <li><Link to='/'>Home</Link></li>
- <li><Link to='/'>Home</Link></li>
-        
-
-    </>
+    const links = (
+      <>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/addJob">Add a Job</Link>
+        </li>
+        <li>
+          <Link to="/myPostedJobs">My Posted Job</Link>
+        </li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+      </>
+    );
 
     console.log(user);
     return (
